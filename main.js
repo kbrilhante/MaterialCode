@@ -62,7 +62,7 @@ async function getData(path) {
 
         // Início do conteúdo do accordion
         const ul = document.createElement('ul');
-        ul.className = "listaAulas";
+        ul.className = "list-group list-group-flush";
         accBody.appendChild(ul);
 
         obj.forEach(item => {
@@ -70,16 +70,18 @@ async function getData(path) {
             const link = item.Link;
             // console.log(atividade, link)
             // item da lista
-            const li = document.createElement('li');
-            li.className = "itemLista";
+            // const li = document.createElement('li');
+            // li.className = "itemLista";
+            // ul.appendChild(li);
 
             // Criando o link
             const a = document.createElement('a');
+            a.className = "list-group-item list-group-item-action"
             a.innerHTML = atividade;
             a.href = link;
 
-            ul.appendChild(li);
-            li.appendChild(a);
+            // li.appendChild(a);
+            ul.appendChild(a);
 
         });
     });
