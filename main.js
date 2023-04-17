@@ -18,8 +18,9 @@ async function getData(path) {
     headers.forEach(header => {
         const obj = data[header];
         let id = header;
-        id = id.replace(",", "");
-        id = id.replace(" ", "");
+        id = id.replaceAll(",", "");
+        id = id.replaceAll(" ", "_");
+        console.log(id)
 
         const headingID = "heading_" + id;
         const collapseID = "collapse_" + id;
